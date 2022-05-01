@@ -1,0 +1,84 @@
+body{
+    background-color: blueviolet;
+}
+
+img{
+    max-width:80%;
+    max-height:80%;
+}
+
+.mem{
+    border-radius: 50px;
+}
+
+#game-container{
+    display:flex;
+    flex-direction: row ;
+    flex-wrap: wrap ;
+    justify-content: center;
+}
+.flip-card {
+    flex-shrink: 3;
+    float:left;
+    
+    /*width: 30%;*/
+    
+    /*padding-bottom: 30%; /* = width for a 1:1 aspect ratio */
+    margin:1.66%;
+
+
+    background-color: transparent;
+    width: 200px;
+    height: 200px;
+    perspective: 1000px;
+  }
+  
+  .flip-card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: transform 0.6s;
+    transform-style: preserve-3d;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    border-radius: 50px;
+  }
+  
+  /*.flip-card:hover .flip-card-inner {
+    transform: rotateY(180deg);
+  }
+  */
+
+  .rotate{
+    transform: rotateY(180deg);
+  }
+  .flip-card-front, .flip-card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+  }
+
+
+  
+  .flip-card-front {
+    /*background-color: #bbb;
+    color: black;*/
+    border-radius: 50px;
+
+    background-color: #ffce73;
+    opacity: 1;
+    background: linear-gradient(135deg, #fd7f1455 25%, transparent 25%) -14px 0/ 28px 28px, linear-gradient(225deg, #fd7f14 25%, transparent 25%) -14px 0/ 28px 28px, linear-gradient(315deg, #fd7f1455 25%, transparent 25%) 0px 0/ 28px 28px, linear-gradient(45deg, #fd7f14 25%, #ffce73 25%) 0px 0/ 28px 28px;
+  }
+  
+  .flip-card-back {
+    background-color: #2980b9;
+    color: white;
+    transform: rotateY(180deg);
+    border-radius: 50px;
+    display: flex;
+    /* align-content: center; */
+    justify-content: center;
+    align-items: center;
+  }
