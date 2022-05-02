@@ -14,13 +14,34 @@ var fruits = [
     "watermelon"
 ];
 
+var coppie;
+var firstCard;
+var secondCard;
+var open = 0;
 $(document).ready(function(){
-    var open = 0;
+    $("#win").hide();
 
-    $("#select-coppie").change(function(){
+    $("#play-btn").click(function(){
+        $("#win").hide();
+        var num = $("#select-coppie").val();
+        if(num!="-1"){
+            coppie=num;
+            $("#game-container").hide();
+            generate(num);
+            setTimeout(function(){
+                
+                $("#game-container").fadeIn(750);
+            },500); 
+            
+            
+            
+        }
+    })
+
+    /*$("#select-coppie").change(function(){
         var num = $("#select-coppie").val();
         generate(num);
-    })
+    })*/
 
     $("body").on("click",".flip-card", function(){
 
@@ -28,20 +49,40 @@ $(document).ready(function(){
     $(".flip-card").click(function(){*/
         var card = $(this).children(".flip-card-inner");
         if(open<2){
-            if(card.hasClass("rotate")){
-                open--;
-                card.removeClass("rotate");
-            }else{
+            if(!card.hasClass("rotate")){
                 open++;
+                if(open==1){
+                    firstCard=$(this);
+                }
+                if(open==2){
+                    secondCard=$(this);
+                }
                 card.addClass("rotate");
             }
         }
 
         if(open==2){
-            setTimeout(function(){
-                $(".flip-card-inner").removeClass("rotate");
+            
+            if(firstCard.attr("data")==secondCard.attr("data")){
+                coppie--;
+                firstCard.children(".flip-card-inner").addClass("found");
+                secondCard.children(".flip-card-inner").addClass("found");
+                firstCard="";
+                secondCard="";
                 open=0;
-            },2000); 
+
+                if(coppie==0){
+                    setTimeout(function(){
+                        $("#win").fadeIn(500);
+                    },750); 
+                }
+            }else{
+
+                setTimeout(function(){
+                    $(".flip-card-inner:not(.found)").removeClass("rotate");
+                    open=0;
+                },2000); 
+            }
 
         }
         
@@ -73,7 +114,7 @@ function generate(num){
     var cards = "";
     while(table.length!=0){
         var index = Math.floor(Math.random() * table.length);
-        var single = '<div class="flip-card">'
+        var single = '<div class="flip-card" data="'+table[index][0]+'">'
                         + '<div class="flip-card-inner">'
                             + '<div class="flip-card-front">'
                             +'</div>'

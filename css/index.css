@@ -3,7 +3,7 @@
 body{
     /*background-color: blueviolet;*/
     background: rgb(105,130,255);
-background: linear-gradient(35deg, rgba(105,130,255,1) 0%, rgba(136,0,255,1) 73%);
+    background: linear-gradient(35deg, rgba(105,130,255,1) 0%, rgba(136,0,255,1) 73%);
     font-family: 'Varela Round', sans-serif;
     font-size: xx-large;
     font-weight: 700;
@@ -18,6 +18,16 @@ img{
 select{
   border-radius: 10px;
   min-width: 50px;
+}
+
+#play-btn{
+  border-radius: 15px;
+  font-weight: 600;
+  padding: 0px 15px;
+  color: white;
+  background-color: #319700;
+  border: 0px;
+  outline: none;
 }
 
 #option-container{
@@ -100,4 +110,17 @@ select{
     /* align-content: center; */
     justify-content: center;
     align-items: center;
+  }
+
+  #win{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    height: 70%;
+    align-items: center;
+    z-index: 200;
+    position: fixed;
+    top: 200px;
+    font-size: 96pt;
+    left: 30%;
   }
