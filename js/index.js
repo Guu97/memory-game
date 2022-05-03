@@ -20,6 +20,8 @@ var secondCard;
 var open = 0;
 $(document).ready(function(){
     $("#win").hide();
+    
+    //$(".background-win").css('opacity',0);
 
     $("#play-btn").click(function(){
         $("#win").hide();
@@ -71,8 +73,9 @@ $(document).ready(function(){
                 secondCard="";
                 open=0;
 
-                if(coppie==0){
+                if(coppie==0){//WIN
                     setTimeout(function(){
+                        //$('body').animate({ backgroundColor: 'rgb(41,203,0)'});
                         $("#win").fadeIn(500);
                     },750); 
                 }

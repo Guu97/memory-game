@@ -2,13 +2,24 @@
 
 body{
     /*background-color: blueviolet;*/
-    background: rgb(105,130,255);
+
+    /*background: rgb(105,130,255);*/
     background: linear-gradient(35deg, rgba(105,130,255,1) 0%, rgba(136,0,255,1) 73%);
+    /*background-image: linear-gradient(to right top, #6982ff, #6770ff, #6c5cff, #7740ff, #8700ff);*/
+    /*background: rgb(41,203,0);
+    background: linear-gradient(35deg, rgba(41,203,0,1) 0%, rgba(41,152,0,1) 59%);*/
+
     font-family: 'Varela Round', sans-serif;
     font-size: xx-large;
     font-weight: 700;
     color: white;
 }
+
+/*.background-win{
+    z-index: 200;
+    background: rgb(41,203,0);
+    background: linear-gradient(35deg, rgba(41,203,0,1) 0%, rgba(41,152,0,1) 59%);
+}*/
 
 img{
     max-width:80%;

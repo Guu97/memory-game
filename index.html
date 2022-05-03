@@ -5,10 +5,19 @@
         <link rel="stylesheet" type="text/css" href="lib/bootstrap.min.css">
         <link rel="stylesheet" type="text/css" href="css/index.css">
         <script src="js/index.js"></script>
-
+        <meta id="vp" name="viewport" content="width=device-width, initial-scale=1">
+        <script>
+            window.onload = function() {
+                if (screen.width < 820) {
+                    var mvp = document.getElementById('vp');
+                    mvp.setAttribute('content','user-scalable=no,width=820');
+                }
+            } 
+        </script>
         <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Varela+Round&display=swap" rel="stylesheet">
+    <script type="text/javascript" src="http://code.jquery.com/ui/1.13.1/jquery-ui.min.js"></script>
     </head>
     <body>
         <div id="option-container">
